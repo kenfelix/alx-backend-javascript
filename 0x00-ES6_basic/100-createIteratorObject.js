@@ -7,5 +7,5 @@ export default function createIteratorObject(report) {
       arr.push(z);
     }
   }
-  console.log(arr);
+  return arr;
 }
