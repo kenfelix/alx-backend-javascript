@@ -1,3 +1,5 @@
 export default function createIteratorObject(report) {
-  return Object.values(report.allEmployees)
+  for (const obj in report.allEmployees) {
+    return Object.values(obj)
+  }
 }
