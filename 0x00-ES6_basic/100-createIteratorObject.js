@@ -1,5 +1,5 @@
 export default function createIteratorObject(report) {
-  const b = a.allEmployees
+  const b = report.allEmployees
   const y = Object.values(b)
   const arr = [];
   for (const x of y) {
