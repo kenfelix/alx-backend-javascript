@@ -1,8 +1,9 @@
 function handleResponseFromAPI(promise) {
-  promise.then(({
-    staus: 200,
-    body: success
-  }) => {
+  promise.then(() => {
     console.log('Got a response from the API');
+    return {
+    status: 200,
+    body: 'photo-profile-1',
+    };
   }, (err) => err);
 }
