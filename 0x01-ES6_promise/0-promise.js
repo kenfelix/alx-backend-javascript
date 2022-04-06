@@ -1,3 +1,4 @@
 function getResponseFromAPI() {
-  return new Promise();
+  const P = new Promise(() => {});
+  return P;
 }
