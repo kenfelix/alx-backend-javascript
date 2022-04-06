@@ -2,5 +2,24 @@ import uploadPhoto from './5-photo-reject';
 import signUpUser from "./4-user-promise";
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  return
+  return Promise.all([
+    signUpUser(firstName, lastName),
+    uploadPhoto(fileName).catch((error) => {
+      return error;
+    }),
+  ]).then((values) => {
+    let status;
+
+    const responses = [];
+    values.forEach((value) => {
+      if (value instanceof Error) status = 'failed';
+      else status = 'fulfilled';
+      responses.push({
+        status,
+        value,
+      });
+    });
+
+    return responses;
+  });
 }
