@@ -1,4 +1,4 @@
-getFullResponseFromAPI(success) {
+export getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     if (success === true) {
       resolve({
